@@ -1,5 +1,9 @@
 package pl.JerzyGajewski.app.web.book;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
 public class Book {
     private Long id;
     private String isbn;
