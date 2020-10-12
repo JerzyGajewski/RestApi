@@ -25,7 +25,7 @@ public class BookController {
         return memoryBookService.findById(id);
     }
     @PutMapping("/{id}")
-    public Book update (@PathVariable Long id, Book book){
+    public Book update (@PathVariable Long id,@RequestBody Book book){
         return memoryBookService.update(id, book);
     }
     @DeleteMapping("/{id}")
