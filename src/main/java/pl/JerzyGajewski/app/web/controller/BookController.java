@@ -8,11 +8,11 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/books")
-public class BokController {
+public class BookController {
 
    private MemoryBookService memoryBookService;
 
-    public BokController(MemoryBookService memoryBookService) {
+    public BookController(MemoryBookService memoryBookService) {
         this.memoryBookService = memoryBookService;
     }
 
@@ -32,9 +32,10 @@ public class BokController {
     public Book delete(@PathVariable Long id){
         return memoryBookService.deleteById(id);
     }
-    @PostMapping("")
-    public void addBook(Book book){
-        memoryBookService.addBook(book);
+
+    @PostMapping(value = "")
+    public Book addBook(@RequestBody Book book){
+      return memoryBookService.addBook(book);
     }
 
 }

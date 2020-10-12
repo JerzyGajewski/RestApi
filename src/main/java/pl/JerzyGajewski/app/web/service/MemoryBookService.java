@@ -1,7 +1,6 @@
 package pl.JerzyGajewski.app.web.service;
 
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import pl.JerzyGajewski.app.web.book.Book;
 
 import java.util.Collection;
@@ -20,20 +19,20 @@ public MemoryBookService(){
             "Bruce Eckel", "Helion", "programing"));
 }
 
-public void addBook(Book book){
+public Book addBook(Book book){
 book.setId(nextId++);
-books.put(nextId, book);
+return books.put(nextId, book);
 }
 public Collection<Book> findAll(){
     return books.values();
 }
 
-public Book findById(Long bookId){
-    return books.get(bookId);
+public Book findById(Long id){
+    return books.get(id);
 }
 
-public Book deleteById(Long bookId){
-    return books.remove(bookId);
+public Book deleteById(Long nextId){
+    return books.remove(nextId);
 }
 
 public Book update (Long id, Book book){
